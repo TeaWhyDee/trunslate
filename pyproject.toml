@@ -1,0 +1,6 @@
+
+
+[tool.poetry]
+packages = [
+    { include = "trunslate" },
+]

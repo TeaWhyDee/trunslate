@@ -1,21 +1,16 @@
 import sys
-from phonemizer import phonemize
-from phonemizer.separator import Separator
 
-from tunic_constants import phoneme_to_enum, TUNIC_PHONEMES
+from trunslate.Translator.trunic import TrunicTranslator
 
-text = sys.argv[1:]
-words = " ".join(text).split(" ")
 
-phonemes = phonemize(
-    words,
-    language='en-us',
-    separator=Separator(phone='|', word='='),
-    preserve_punctuation=True,
-    njobs=4)
+def main():
+    text = " ".join(sys.argv[1:])
+    # words = " ".join(text).split(" ")
+    translators = [TrunicTranslator()]
 
-# print(phonemes)
+    trunslator = translators[0]
+    trunslator.process_text(text)
 
-for word in phonemes:
-    print(word.split("|")[0:-1])
 
+if __name__ == "__main__":
+    main()

@@ -1,1 +1,2 @@
 eng-to-ipa==0.0.2
+phonemizer==3.2.1
